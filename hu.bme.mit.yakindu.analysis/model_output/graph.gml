@@ -176,9 +176,9 @@ graph
 			LabelGraphics
 			[
 				text	"
-	name = white
+	name = feher
 	static = false
-	id = example wh...
+	id = example fe...
 	direction = ::in
 	"
 				fontSize	14
@@ -250,9 +250,9 @@ graph
 			LabelGraphics
 			[
 				text	"
-	name = black
+	name = fekete
 	static = false
-	id = example bl...
+	id = example fe...
 	direction = ::in
 	"
 				fontSize	14
@@ -324,9 +324,9 @@ graph
 			LabelGraphics
 			[
 				text	"
-	name = whiteTime
+	name = feherIdo
 	static = false
-	id = example wh...
+	id = example fe...
 	const = false
 	readonly = false
 	"
@@ -505,9 +505,9 @@ graph
 			LabelGraphics
 			[
 				text	"
-	name = blackTime
+	name = feketeIdo
 	static = false
-	id = example bl...
+	id = example fe...
 	const = false
 	readonly = false
 	"
@@ -1020,7 +1020,7 @@ graph
 				text	"
 	specification = null
 	namespace = null
-	name = Black
+	name = Fekete
 	documentation = 
 	orthogonal = false
 	simple = true
@@ -1075,7 +1075,7 @@ graph
 			id	30
 			graphics
 			[
-				w	177.10000000000002
+				w	184.8
 				h	54
 				type	"rectangle"
 				fill	"#FFFFFF"
@@ -1096,7 +1096,7 @@ graph
 			LabelGraphics
 			[
 				text	"
-	specification = black
+	specification = fekete
 	documentation = 
 	"
 				fontSize	14
@@ -1601,7 +1601,7 @@ graph
 				text	"
 	specification = 
 	namespace = null
-	name = White
+	name = Feher
 	documentation = 
 	orthogonal = false
 	simple = true
@@ -1677,7 +1677,7 @@ graph
 			LabelGraphics
 			[
 				text	"
-	specification = white
+	specification = feher
 	documentation = 
 	"
 				fontSize	14

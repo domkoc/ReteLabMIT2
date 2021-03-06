@@ -12,42 +12,42 @@ public class ExampleStatemachine implements IExampleStatemachine {
 			start = true;
 		}
 		
-		private boolean white;
+		private boolean feher;
 		
-		public void raiseWhite() {
-			white = true;
+		public void raiseFeher() {
+			feher = true;
 		}
 		
-		private boolean black;
+		private boolean fekete;
 		
-		public void raiseBlack() {
-			black = true;
+		public void raiseFekete() {
+			fekete = true;
 		}
 		
-		private long whiteTime;
+		private long feherIdo;
 		
-		public long getWhiteTime() {
-			return whiteTime;
+		public long getFeherIdo() {
+			return feherIdo;
 		}
 		
-		public void setWhiteTime(long value) {
-			this.whiteTime = value;
+		public void setFeherIdo(long value) {
+			this.feherIdo = value;
 		}
 		
-		private long blackTime;
+		private long feketeIdo;
 		
-		public long getBlackTime() {
-			return blackTime;
+		public long getFeketeIdo() {
+			return feketeIdo;
 		}
 		
-		public void setBlackTime(long value) {
-			this.blackTime = value;
+		public void setFeketeIdo(long value) {
+			this.feketeIdo = value;
 		}
 		
 		protected void clearEvents() {
 			start = false;
-			white = false;
-			black = false;
+			feher = false;
+			fekete = false;
 		}
 	}
 	
@@ -57,8 +57,8 @@ public class ExampleStatemachine implements IExampleStatemachine {
 	
 	public enum State {
 		main_region_Init,
-		main_region_Black,
-		main_region_White,
+		main_region_Fekete,
+		main_region_Feher,
 		$NullState$
 	};
 	
@@ -84,9 +84,9 @@ public class ExampleStatemachine implements IExampleStatemachine {
 		}
 		clearEvents();
 		clearOutEvents();
-		sCInterface.setWhiteTime(60);
+		sCInterface.setFeherIdo(60);
 		
-		sCInterface.setBlackTime(60);
+		sCInterface.setFeketeIdo(60);
 	}
 	
 	public void enter() {
@@ -111,11 +111,11 @@ public class ExampleStatemachine implements IExampleStatemachine {
 			case main_region_Init:
 				main_region_Init_react(true);
 				break;
-			case main_region_Black:
-				main_region_Black_react(true);
+			case main_region_Fekete:
+				main_region_Fekete_react(true);
 				break;
-			case main_region_White:
-				main_region_White_react(true);
+			case main_region_Feher:
+				main_region_Feher_react(true);
 				break;
 			default:
 				// $NullState$
@@ -166,10 +166,10 @@ public class ExampleStatemachine implements IExampleStatemachine {
 		switch (state) {
 		case main_region_Init:
 			return stateVector[0] == State.main_region_Init;
-		case main_region_Black:
-			return stateVector[0] == State.main_region_Black;
-		case main_region_White:
-			return stateVector[0] == State.main_region_White;
+		case main_region_Fekete:
+			return stateVector[0] == State.main_region_Fekete;
+		case main_region_Feher:
+			return stateVector[0] == State.main_region_Feher;
 		default:
 			return false;
 		}
@@ -207,47 +207,47 @@ public class ExampleStatemachine implements IExampleStatemachine {
 		sCInterface.raiseStart();
 	}
 	
-	public void raiseWhite() {
-		sCInterface.raiseWhite();
+	public void raiseFeher() {
+		sCInterface.raiseFeher();
 	}
 	
-	public void raiseBlack() {
-		sCInterface.raiseBlack();
+	public void raiseFekete() {
+		sCInterface.raiseFekete();
 	}
 	
-	public long getWhiteTime() {
-		return sCInterface.getWhiteTime();
+	public long getFeherIdo() {
+		return sCInterface.getFeherIdo();
 	}
 	
-	public void setWhiteTime(long value) {
-		sCInterface.setWhiteTime(value);
+	public void setFeherIdo(long value) {
+		sCInterface.setFeherIdo(value);
 	}
 	
-	public long getBlackTime() {
-		return sCInterface.getBlackTime();
+	public long getFeketeIdo() {
+		return sCInterface.getFeketeIdo();
 	}
 	
-	public void setBlackTime(long value) {
-		sCInterface.setBlackTime(value);
+	public void setFeketeIdo(long value) {
+		sCInterface.setFeketeIdo(value);
 	}
 	
-	/* Entry action for state 'Black'. */
-	private void entryAction_main_region_Black() {
+	/* Entry action for state 'Fekete'. */
+	private void entryAction_main_region_Fekete() {
 		timer.setTimer(this, 0, (1 * 1000), false);
 	}
 	
-	/* Entry action for state 'White'. */
-	private void entryAction_main_region_White() {
+	/* Entry action for state 'Feher'. */
+	private void entryAction_main_region_Feher() {
 		timer.setTimer(this, 1, (1 * 1000), false);
 	}
 	
-	/* Exit action for state 'Black'. */
-	private void exitAction_main_region_Black() {
+	/* Exit action for state 'Fekete'. */
+	private void exitAction_main_region_Fekete() {
 		timer.unsetTimer(this, 0);
 	}
 	
-	/* Exit action for state 'White'. */
-	private void exitAction_main_region_White() {
+	/* Exit action for state 'Feher'. */
+	private void exitAction_main_region_Feher() {
 		timer.unsetTimer(this, 1);
 	}
 	
@@ -257,18 +257,18 @@ public class ExampleStatemachine implements IExampleStatemachine {
 		stateVector[0] = State.main_region_Init;
 	}
 	
-	/* 'default' enter sequence for state Black */
-	private void enterSequence_main_region_Black_default() {
-		entryAction_main_region_Black();
+	/* 'default' enter sequence for state Fekete */
+	private void enterSequence_main_region_Fekete_default() {
+		entryAction_main_region_Fekete();
 		nextStateIndex = 0;
-		stateVector[0] = State.main_region_Black;
+		stateVector[0] = State.main_region_Fekete;
 	}
 	
-	/* 'default' enter sequence for state White */
-	private void enterSequence_main_region_White_default() {
-		entryAction_main_region_White();
+	/* 'default' enter sequence for state Feher */
+	private void enterSequence_main_region_Feher_default() {
+		entryAction_main_region_Feher();
 		nextStateIndex = 0;
-		stateVector[0] = State.main_region_White;
+		stateVector[0] = State.main_region_Feher;
 	}
 	
 	/* 'default' enter sequence for region main region */
@@ -282,20 +282,20 @@ public class ExampleStatemachine implements IExampleStatemachine {
 		stateVector[0] = State.$NullState$;
 	}
 	
-	/* Default exit sequence for state Black */
-	private void exitSequence_main_region_Black() {
+	/* Default exit sequence for state Fekete */
+	private void exitSequence_main_region_Fekete() {
 		nextStateIndex = 0;
 		stateVector[0] = State.$NullState$;
 		
-		exitAction_main_region_Black();
+		exitAction_main_region_Fekete();
 	}
 	
-	/* Default exit sequence for state White */
-	private void exitSequence_main_region_White() {
+	/* Default exit sequence for state Feher */
+	private void exitSequence_main_region_Feher() {
 		nextStateIndex = 0;
 		stateVector[0] = State.$NullState$;
 		
-		exitAction_main_region_White();
+		exitAction_main_region_Feher();
 	}
 	
 	/* Default exit sequence for region main region */
@@ -304,11 +304,11 @@ public class ExampleStatemachine implements IExampleStatemachine {
 		case main_region_Init:
 			exitSequence_main_region_Init();
 			break;
-		case main_region_Black:
-			exitSequence_main_region_Black();
+		case main_region_Fekete:
+			exitSequence_main_region_Fekete();
 			break;
-		case main_region_White:
-			exitSequence_main_region_White();
+		case main_region_Feher:
+			exitSequence_main_region_Feher();
 			break;
 		default:
 			break;
@@ -331,7 +331,7 @@ public class ExampleStatemachine implements IExampleStatemachine {
 			if (react()==false) {
 				if (sCInterface.start) {
 					exitSequence_main_region_Init();
-					enterSequence_main_region_White_default();
+					enterSequence_main_region_Feher_default();
 				} else {
 					did_transition = false;
 				}
@@ -340,20 +340,20 @@ public class ExampleStatemachine implements IExampleStatemachine {
 		return did_transition;
 	}
 	
-	private boolean main_region_Black_react(boolean try_transition) {
+	private boolean main_region_Fekete_react(boolean try_transition) {
 		boolean did_transition = try_transition;
 		
 		if (try_transition) {
 			if (react()==false) {
-				if (sCInterface.black) {
-					exitSequence_main_region_Black();
-					enterSequence_main_region_White_default();
+				if (sCInterface.fekete) {
+					exitSequence_main_region_Fekete();
+					enterSequence_main_region_Feher_default();
 				} else {
 					if (timeEvents[0]) {
-						exitSequence_main_region_Black();
-						sCInterface.setBlackTime(sCInterface.getBlackTime() - 1);
+						exitSequence_main_region_Fekete();
+						sCInterface.setFeketeIdo(sCInterface.getFeketeIdo() - 1);
 						
-						enterSequence_main_region_Black_default();
+						enterSequence_main_region_Fekete_default();
 					} else {
 						did_transition = false;
 					}
@@ -363,20 +363,20 @@ public class ExampleStatemachine implements IExampleStatemachine {
 		return did_transition;
 	}
 	
-	private boolean main_region_White_react(boolean try_transition) {
+	private boolean main_region_Feher_react(boolean try_transition) {
 		boolean did_transition = try_transition;
 		
 		if (try_transition) {
 			if (react()==false) {
-				if (sCInterface.white) {
-					exitSequence_main_region_White();
-					enterSequence_main_region_Black_default();
+				if (sCInterface.feher) {
+					exitSequence_main_region_Feher();
+					enterSequence_main_region_Fekete_default();
 				} else {
 					if (timeEvents[1]) {
-						exitSequence_main_region_White();
-						sCInterface.setWhiteTime(sCInterface.getWhiteTime() - 1);
+						exitSequence_main_region_Feher();
+						sCInterface.setFeherIdo(sCInterface.getFeherIdo() - 1);
 						
-						enterSequence_main_region_White_default();
+						enterSequence_main_region_Feher_default();
 					} else {
 						did_transition = false;
 					}

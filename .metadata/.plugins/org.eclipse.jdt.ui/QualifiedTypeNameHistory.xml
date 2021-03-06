@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="org.yakindu.sct.model.sgraph.State"/>
+    <fullyQualifiedTypeName name="org.yakindu.sct.model.sgraph.Transition"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="org.yakindu.sct.model.stext.stext.VariableDefinition"/>
+    <fullyQualifiedTypeName name="org.yakindu.sct.model.sgraph.Trigger"/>
+    <fullyQualifiedTypeName name="org.yakindu.sct.model.stext.stext.EventDefinition"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+</qualifiedTypeNameHistroy>

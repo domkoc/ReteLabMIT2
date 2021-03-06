@@ -73,7 +73,7 @@ public class Main {
 			if (content instanceof EventDefinition) {
 				EventDefinition eventDefinition = (EventDefinition) content;
 				System.out.println("            case \"" + eventDefinition.getName() + "\":");
-				System.out.println("                s.raiseStart();");
+				System.out.println("                s.raise" + eventDefinition.getName().substring(0, 1).toUpperCase() + eventDefinition.getName().substring(1) + "();");
 				System.out.println("                s.runCycle();");
 				System.out.println("                break;");
 
@@ -97,7 +97,7 @@ public class Main {
 			EObject content = printIterator.next();
 			if(content instanceof VariableDefinition) {
 				VariableDefinition variableDefinition = (VariableDefinition) content;
-				System.out.println("        System.out.println(\"" + variableDefinition.getName().charAt(0) + " = \" + s.getSCInterface().get" + variableDefinition.getName() + "());");
+				System.out.println("        System.out.println(\"" + variableDefinition.getName().charAt(0) + " = \" + s.getSCInterface().get" + variableDefinition.getName().substring(0, 1).toUpperCase() + variableDefinition.getName().substring(1) + "());");
 			}
 		}
 		System.out.println("    }");
