@@ -33,11 +33,13 @@ public class Main {
 				State state = (State) content;
 				if (state.getName() == "") {
 					TreeIterator<EObject> insideIterator = s.eAllContents();
+					boolean nameTaken = false;
 					while (insideIterator.hasNext()) {
 						EObject insideContent = insideIterator.next();
 						if(insideContent instanceof State) {
 							State insideState = (State) insideContent;
 							if (insideState.getName() == "State"+suffix) {
+								nameTaken = true;
 								suffix++;
 								insideIterator = s.eAllContents();
 							}
